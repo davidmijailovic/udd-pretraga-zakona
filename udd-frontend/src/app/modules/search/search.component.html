@@ -1,0 +1,60 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="search" class="form-control" [(ngModel)]="searchTerm" placeholder="Unesite tekst za pretragu">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="search()">Pretraži</button>
+          </div>
+          <div ngbDropdown class="ml-3" style="margin-left: 10px;">
+            <button class="btn btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+              {{ isAdvanced ? 'Napredna pretraga' : 'Jednostavna pretraga' }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="toggleAdvanced(true)">Napredna pretraga</button>
+              <button ngbDropdownItem (click)="toggleAdvanced(false)">Jednostavna pretraga</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="input-group">
+          <input type="search" class="form-control" [(ngModel)]="address" placeholder="Adresa">
+          <input type="search" class="form-control" [(ngModel)]="radius" placeholder="Radijus">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="searchGeolocation()">Pretraži po geolokaciji</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div *ngFor="let item of responseItems" class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            {{ item.title }}
+            <button class="btn btn-primary" (click)="download(item.serverFilename)">Preuzmi</button>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Ime:</strong> {{ item.name }}</li>
+            <li class="list-group-item"><strong>Prezime:</strong> {{ item.surname }}</li>
+            <li class="list-group-item"><strong>Naziv vlade:</strong> {{ item.governmentName }}</li>
+            <li class="list-group-item"><strong>Nivo uprave:</strong> {{ item.governmentType }}</li>
+            <li class="list-group-item"><strong>Adresa vlade:</strong> {{ item.governmentAddress }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

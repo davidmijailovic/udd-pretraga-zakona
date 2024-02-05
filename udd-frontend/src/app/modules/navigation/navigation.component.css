@@ -1,0 +1,40 @@
+nav{
+    width: 100vl;
+    padding: 1rem;
+    background-color: #4fbeff;
+    color: white;
+    height: 60px;
+}
+
+.nav-right{
+    position: relative;
+    float: right;
+    margin-top: 1rem;
+}
+
+.nav-left{
+    float: left;
+    margin-top: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(white, white);
+    background-size: 0 5px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
+}
+
+a:hover{
+    background-size: 100% 5px, auto;
+}
+
+*{
+    color: white;
+}
+
+input, select, option{
+    color: black;
+}

@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Otpremi dokument</label>
+        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+        <button type="button" class="btn btn-outline-primary mt-2" (click)="uploadFile()">Otpremi</button>
+    </div>
+</div>
